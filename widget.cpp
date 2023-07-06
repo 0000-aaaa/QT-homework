@@ -31,9 +31,9 @@ Widget::Widget(QWidget *parent)
     });
     //敌人移动
     mEnemyMoveTimer=new QTimer(this);
-    mEnemyMoveTimer->start(1000);
+    mEnemyMoveTimer->start(500);
     connect(mEnemyMoveTimer,&QTimer::timeout,[&](){
-        mEnemyList->EnemyListMove();
+        mEnemyList->EnemyListMove(QPointF(200,200));
     });
     //子弹移动
     mBulletMoveTimer=new QTimer(this);
@@ -59,8 +59,12 @@ Widget::Widget(QWidget *parent)
     connect(mRemoveHitBulletTimer,&QTimer::timeout,[&](){
         mBulletList->RemoveHitBullet(mEnemyList);
     });
-
-
+//敌人生成敌人
+    mEnemyProduceEnemyTimer=new QTimer(this);
+    mEnemyProduceEnemyTimer->start(5000);
+    connect(mEnemyProduceEnemyTimer,&QTimer::timeout,[&](){
+        mEnemyList->EnemyProduceEnemy();
+    });
 
     mGameView.show();
 

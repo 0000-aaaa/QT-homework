@@ -11,9 +11,10 @@ public:
     QVector<Enemy*> mlist;
     QGraphicsScene*ptr;
     void produceEnemy();
-    void EnemyListMove();
+    void EnemyListMove(QPointF target);
     void SetPtr(QGraphicsScene*_ptr);
     void RemoveDeadEnemy();
+    void EnemyProduceEnemy();
 };
 
 #endif // ENEMYLIST_H

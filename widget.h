@@ -36,5 +36,6 @@ private:
     QTimer* mEnemyRemoveTimer;//去除死亡敌人计时器
     QTimer* mRemoveRunBulletTimer;//去除飞出边界子弹计时器
     QTimer* mRemoveHitBulletTimer;//去除击中敌人子弹计时器
+    QTimer* mEnemyProduceEnemyTimer;//敌人生成敌人
 };
 #endif // WIDGET_H

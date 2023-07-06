@@ -25,7 +25,9 @@ void BulletList::RemoveRunBullet(){
         while((*i)->RunOut())
         {
             ptr->removeItem((*i));
+            Bullet* temp=*i;
             i=mlist.erase(i);
+            delete temp;
             if(i==mlist.end())return;
         }
         if(i==mlist.end())return;
@@ -37,7 +39,9 @@ void BulletList::RemoveHitBullet(EnemyList* mEnemyList){
         while((*i)->ShootEnemy(mEnemyList))
         {
             ptr->removeItem((*i));
+            Bullet*temp=*i;
             i=mlist.erase(i);
+            delete temp;
             if(i==mlist.end())return;
         }
         if(i==mlist.end())return;
